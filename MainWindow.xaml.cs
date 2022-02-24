@@ -21,6 +21,7 @@ namespace test_mvvm
     /// </summary>
     public partial class MainWindow : Window
     {
+        //기본생성
         public MainWindow()
         {
             InitializeComponent();
