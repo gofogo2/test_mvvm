@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using test_mvvm.Messages;
 
 namespace test_mvvm.ViewModel
@@ -15,6 +16,7 @@ namespace test_mvvm.ViewModel
         public SenderViewModel()
         {
             OnClickCommand = new RelayCommand(OnClickCommandAction, null);
+            OnTextChangedCommand = new RelayCommand<string>((msg)=> OnTextChangedCommandAction(msg), null);
         }
 
         private string _textBoxText;
@@ -29,10 +31,26 @@ namespace test_mvvm.ViewModel
             }
         }
 
-        public RelayCommand OnClickCommand { get; set; }
+        
 
+        public RelayCommand<string> OnTextChangedCommand { get; set; }
+        
+        private void OnTextChangedCommandAction(string msg)
+        {
+            MessageBox.Show(TextBoxText);
+        }
+
+        public RelayCommand OnClickCommand { get; set; }
         private void OnClickCommandAction()
         {
+            if (IsInDesignMode)
+            {
+
+            }
+            else
+            {
+
+            }
             var viewModelMessage = new ViewModelMessage()
             {
                 Text = TextBoxText

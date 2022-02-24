@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:local="clr-namespace:test_mvvm.Views"
              mc:Ignorable="d" 
              Background="AliceBlue"
@@ -12,7 +13,13 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="Receiver Data" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" />
+        <Label Content="Receiver Data" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold">
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonUp">
+                    <i:InvokeCommandAction Command="{Binding OnClickCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
+        </Label>
         <Label Grid.Row="1" Content="{Binding ContentText}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="YellowGreen"  FontSize="50" FontWeight="Bold" />
     </Grid>
 </UserControl>

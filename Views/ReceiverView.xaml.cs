@@ -24,5 +24,9 @@ namespace test_mvvm.Views
         {
             InitializeComponent();
         }
+
+        private void ReceiverView_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
@@ -25,12 +26,18 @@ namespace test_mvvm.ViewModel
 
         public ReceiverViewModel()
         {
+            OnClickCommand = new RelayCommand(OnClickCommandAction, null);
             Messenger.Default.Register<ViewModelMessage>(this, OnReceiveMessageAction);
         }
 
         private void OnReceiveMessageAction(ViewModelMessage obj)
         {
             ContentText = obj.Text;
+        }
+
+        public RelayCommand OnClickCommand { get; set; }
+        private void OnClickCommandAction()
+        {
         }
     }
 }

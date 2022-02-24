@@ -5,7 +5,6 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using test_mvvm.ViewModels;
 
 namespace test_mvvm
 {
